@@ -1,0 +1,61 @@
+@mixin FontSize($size, $family) {
+  font-family: $family;
+  @if $size == 14 {
+    font-size: 14px;
+  }
+
+  @else if $size == 22 {
+    font-size: 22px;
+    line-height: 39.6px; 
+  }
+  
+  @else if $size == 26 {
+    font-size: 26px;
+  }
+
+  @else if $size == 38 {
+    font-size: 38px;
+  }
+
+  @else if $size == 48 {
+    font-size: 48px;
+  }
+
+  @else if $size == 58 {
+    font-size: 58px;
+  }
+  @else {
+    font-size: 14px;
+  }
+}
+
+@mixin CTAButton ($padding) {
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: $primary-dark-color !important;
+  font: {
+    family: $font-secondary;
+    size: 14px;
+    style: normal;
+    weight: 600; 
+  }
+  line-height: normal;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, $primary-color-gradient 0%, $secondary-color-gradient 100%);
+  transition: background-size 2s;
+  text-decoration: none;
+  &:hover {
+    background-image: linear-gradient(160deg, $secondary-color-gradient  10%,  $primary-color-gradient 100%);
+    cursor: pointer;
+  }
+  @if ($padding == 'lg') {
+    padding: 22px 54px;
+  }
+  @else if($padding == 'sm') {
+     padding: 14px 30px;
+  }
+}

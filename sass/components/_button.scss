@@ -1,0 +1,21 @@
+
+
+%btn-outline{
+  color: #F6F6F6;
+  font: {
+    family: $font-secondary;
+    size: 14px;
+    style: normal;
+    weight: 600;
+  } 
+  line-height: normal;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  display: flex;
+  padding: 22px 54px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px solid $secondary-color;
+}

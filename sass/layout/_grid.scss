@@ -1,0 +1,73 @@
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+@mixin media($breakpoint) {
+  $breakpoint-value: map-get($grid-breakpoints, $breakpoint);
+  @if not $breakpoint-value {
+    @error "Invalid breakpoint: #{$breakpoint}.";
+  }
+
+  @media (min-width: $breakpoint-value) {
+    @content;
+  }
+}
+
+@mixin container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 25px;
+
+  @include media("sm") {
+    max-width: calc(map-get($grid-breakpoints, sm) - 10px);
+  }
+
+  @include media("md") {
+    max-width: calc(map-get($grid-breakpoints, md) - 10px);
+  }
+
+  @include media("lg") {
+    max-width: calc(map-get($grid-breakpoints, lg) - 10px);
+  }
+
+  @include media("xl") {
+    max-width: calc(map-get($grid-breakpoints, xl) - 10px);
+  }
+
+  @include media("xxl") {
+    max-width: calc(map-get($grid-breakpoints, xxl) - 10px);
+  }
+}
+
+.container {
+  @include container;
+}
+
+%grid {
+  display: grid;
+  gap: 20px;
+}
+
+@for $i from 1 through 5 {
+  $columns: 1 * $i;
+  .grid-#{$i} {
+    @extend %grid;
+    grid-template-columns: repeat(#{$i}, 1fr); 
+  }
+}
+
+@each $breakpoint, $value in $grid-breakpoints {
+  @include media($breakpoint) {
+    @for $i from 1 through 5 {
+      $columns: 1 * $i;
+      .grid-#{$breakpoint}-#{$i} {
+        grid-template-columns: repeat(#{$i}, 1fr);
+      }
+    }
+  }
+}

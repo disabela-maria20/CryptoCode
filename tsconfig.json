@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "outDir": "./scripts/js",
+    "rootDir": "./scripts/ts",
+    "removeComments": true,
+    "sourceMap": false,
+    "module": "ES6",
+  },
+  "include": [
+    "scripts/**/*.ts"
+  ]
+}
