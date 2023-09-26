@@ -5,7 +5,8 @@
       "format": "compressed",
       "extensionName": ".min.css",
       "savePath": "\\css",
-      "savePathReplacementPairs": null
+      "savePathReplacementPairs": null,
+      "scss.compileMap": false
     }
   ],
 }

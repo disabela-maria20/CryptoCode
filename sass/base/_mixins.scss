@@ -3,7 +3,9 @@
   @if $size == 14 {
     font-size: 14px;
   }
-
+  @if $size == 16 {
+    font-size: 16px;
+  }
   @else if $size == 22 {
     font-size: 22px;
     line-height: 39.6px; 
@@ -23,6 +25,9 @@
 
   @else if $size == 58 {
     font-size: 58px;
+  }
+  @else if $size == 64 {
+    font-size: 64px;
   }
   @else {
     font-size: 14px;
